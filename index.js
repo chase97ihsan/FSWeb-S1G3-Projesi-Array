@@ -40,8 +40,10 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
 */
 
 
-function kopyala(/*kod buraya*/){
-  /*kod buraya*/
+function kopyala(orijinalTatlar){
+  let result=[];
+  result=orijinalTatlar;
+  return result;
 }
 
 
@@ -56,9 +58,14 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 */
 
 
-function dizi25Cesitmi(/*kod buraya*/){
-  /*kod buraya*/
-}
+function dizi25Cesitmi(dizi){
+  
+  if(dizi.length==25){
+    return true
+  }else{
+    return false
+  }
+}console.log(dizi25Cesitmi(orijinalTatlar));
 
 
 /* Görev 3:
@@ -74,9 +81,10 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
 */
 
 
-function cesitEkle(/*kod buraya*/){
-  /*kod buraya*/
-}
+function cesitEkle(dizi)
+{dizi.unshift("Kakule");
+return dizi
+} console.log(cesitEkle(orijinalTatlar))
 
 
 /* Cörev 4:
@@ -92,9 +100,11 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
 */
 
 
-function sonCesitiKaldir(/*kod buraya*/){
-  /*kod buraya*/
-}
+function sonCesitiKaldir(dizi){
+
+  dizi.pop();
+  return dizi}
+console.log(sonCesitiKaldir(orijinalTatlar))
 
 
 /* Görev 5:
@@ -108,9 +118,10 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(/*kod buraya*/){
-  /*kod buraya*/
-}
+function indekstekiCesitiGetir(tatlar,sayı){
+
+  return tatlar[sayı]
+}console.log(indekstekiCesitiGetir(orijinalTatlar,3))
 
 
 /* Görev 6:
@@ -128,9 +139,16 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(/*kod buraya*/){
-  /*kod buraya*/
-}
+function ismeGoreCesitCikar(tatlar,lezzet){
+  for (let index = 0; index <tatlar.length; index++) {
+    const element = tatlar[index];
+    if(element==lezzet){
+      tatlar.splice(index,1);
+    }
+    
+  }
+  return tatlar
+}console.log(ismeGoreCesitCikar(orijinalTatlar,"Tarçın"));
 
 
 /* Görev 7:
@@ -154,9 +172,15 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
 */
 
 
-function ismeGoreFiltrele(/*kod buraya*/){
-  /*kod buraya*/
-}
+function ismeGoreFiltrele(tatlar,filtreAdi){
+  let yeni=[];
+  for (let index = 0; index < tatlar.length; index++) {
+    if(tatlar[index].includes(filtreAdi)){
+      yeni.push(tatlar[index]);
+
+    }  
+  }return yeni
+}console.log(ismeGoreFiltrele(orijinalTatlar,"Çikolata"))
 
 
 
